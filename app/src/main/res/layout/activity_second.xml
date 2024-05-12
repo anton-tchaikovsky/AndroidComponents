@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+    <TextView
+        android:id="@+id/second_activity_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/second_activity"
+        android:minHeight="@dimen/min_height"
+        tools:text="Как дела?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="@dimen/default_margin"
+         />
+
+    <EditText
+        android:id="@+id/second_activity_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/second_activity"
+        android:minHeight="@dimen/min_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_activity_text_view"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        tools:ignore="Autofill,TextContrastCheck"
+        android:inputType="text" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/second_ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_activity_edit_text"
+        android:text="@android:string/ok"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

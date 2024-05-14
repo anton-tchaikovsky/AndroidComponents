@@ -5,7 +5,9 @@
     <string name="default_result">Default result</string>
     <string name="camera">camera</string>
     <string name="play">play</string>
+    <string name="play_info">play info</string>
     <string name="stop">stop</string>
+    <string name="close">close</string>
     <string name="no_access_camera">Нет доступа к камере</string>
     <string name="no_permission_camera">Нет разрешения на пользование камерой</string>
     <string name="explanation_camera">Чтобы сфотографировать нужно разрешение для доступа к камере </string>

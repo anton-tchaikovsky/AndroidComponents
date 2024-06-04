@@ -73,13 +73,13 @@ class MediaService : Service() {
     }
 
     override fun onCreate() {
-        Log.d("@@@", "onCreate")
+        Log.d("@@@", "onCreateMediaService")
         super.onCreate()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val data = intent?.getStringExtra(KEY_FOR_MEDIA_SERVICE_INTENT)
-        Log.d("@@@", "onStartCommand flags $flags startId $startId message $data")
+        Log.d("@@@", "onStartCommandMediaService flags $flags startId $startId message $data")
         when (data){
             getString(R.string.stop) -> player.pause()
             getString(R.string.play) -> {
@@ -97,7 +97,7 @@ class MediaService : Service() {
     override fun onBind(intent: Intent): IBinder? = null
 
     override fun onDestroy() {
-        Log.d("@@@", "onDestroy")
+        Log.d("@@@", "onDestroyMediaService")
         player.release()
         super.onDestroy()
     }

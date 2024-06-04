@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -36,11 +37,12 @@ class FirstActivity : AppCompatActivity() {
         }
 
     // контракт на открытие камеры
-    private val cameraLauncher = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
-        bitmap?.let {
-            findViewById<AppCompatImageView>(R.id.camera_image_view).setImageBitmap(it)
+    private val cameraLauncher =
+        registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
+            bitmap?.let {
+                findViewById<AppCompatImageView>(R.id.camera_image_view).setImageBitmap(it)
+            }
         }
-    }
 
     // контракт на открытие secondActivity
     private val secondActivityResultLauncher =
@@ -50,13 +52,21 @@ class FirstActivity : AppCompatActivity() {
                 Toast.makeText(this, getString(R.string.default_result), Toast.LENGTH_SHORT)
                     .show()
             else {
-                val data = it.data?.getStringExtra(OUTPUT_KEY_FOR_ACTIVITY_RESULT)
+                val dataAnswer = it.data?.getStringExtra(OUTPUT_KEY_ANSWER_FOR_ACTIVITY_RESULT)
                 Toast.makeText(
                     this,
-                    if (data.isNullOrBlank()) getString(R.string.default_result) else data,
+                    if (dataAnswer.isNullOrBlank()) getString(R.string.default_result) else dataAnswer,
                     Toast.LENGTH_SHORT
                 )
                     .show()
+                val dataContacts =
+                    it.data?.getStringArrayExtra(OUTPUT_KEY_CONTACTS_FOR_ACTIVITY_RESULT)
+                if (dataContacts == null)
+                    Log.d("@@@", "Not contacts")
+                else
+                    dataContacts.forEach { contact ->
+                        Log.d("@@@", contact)
+                    }
             }
         }
 
@@ -96,6 +106,7 @@ class FirstActivity : AppCompatActivity() {
 
     companion object {
         internal const val INPUT_KEY_FOR_ACTIVITY_RESULT = "InputKeyForActivityResult"
-        internal const val OUTPUT_KEY_FOR_ACTIVITY_RESULT = "OutputKeyForActivityResult"
+        internal const val OUTPUT_KEY_ANSWER_FOR_ACTIVITY_RESULT = "OutputKeyForActivityResult"
+        internal const val OUTPUT_KEY_CONTACTS_FOR_ACTIVITY_RESULT = "OutputKeyForActivityResult"
     }
 }

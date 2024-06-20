@@ -52,7 +52,7 @@ class ContactsService : Service() {
                 close()
             }
         } else {
-            contactsList.add( "Антон")
+            contactsList.add( "Федор")
             contactsList.add( "Петр")
         }
 

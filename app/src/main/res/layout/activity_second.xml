@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+    <TextView
+        android:id="@+id/contact_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height"
+        tools:text="Антон"
+        app:layout_constraintBottom_toTopOf="@id/second_activity_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        />
+
+    <TextView
+        android:id="@+id/second_activity_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height"
+        tools:text="Как дела?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="@dimen/default_margin"
+         />
+
+    <EditText
+        android:id="@+id/second_activity_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/second_activity"
+        android:minHeight="@dimen/min_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_activity_text_view"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        tools:ignore="Autofill,TextContrastCheck,VisualLintTextFieldSize"
+        android:inputType="text" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/second_ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_activity_edit_text"
+        android:text="@android:string/ok"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/play_media_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_ok_button"
+        android:text="@string/play"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/stop_media_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/play_media_button"
+        android:text="@string/stop"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/get_contact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/transfer_contacts_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stop_media_button"
+        android:text="@string/get_first_contact"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/transfer_contacts_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/get_contact_button"
+        app:layout_constraintTop_toBottomOf="@id/stop_media_button"
+        android:text="@string/transfer_all_contacts"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

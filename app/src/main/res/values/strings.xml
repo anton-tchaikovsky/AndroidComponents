@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">AndroidComponents</string>
+    <string name="first_activity">введи вопрос</string>
+    <string name="second_activity">введи ответ</string>
+    <string name="default_result">Default result</string>
+    <string name="camera">camera</string>
+    <string name="play">play</string>
+    <string name="play_info">play info</string>
+    <string name="stop">stop</string>
+    <string name="get_first_contact">get first contact</string>
+    <string name="transfer_all_contacts">transfer all contacts</string>
+    <string name="close">close</string>
+    <string name="no_access_camera">Нет доступа к камере</string>
+    <string name="no_access_contacts">Нет доступа к контактам</string>
+    <string name="no_permission_camera">Нет разрешения на пользование камерой</string>
+    <string name="no_permission_read_contacts">Нет разрешения на чтение контактов</string>
+    <string name="explanation_camera">Чтобы сфотографировать нужно разрешение для доступа к камере </string>
 </resources>
